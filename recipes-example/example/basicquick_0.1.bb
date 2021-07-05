@@ -13,3 +13,6 @@ do_install() {
       install -d ${D}${bindir}
       install -m 0755 BasicQuick ${D}${bindir}
 }
+
+FILES_${PN} = "${bindir}/BasicQuick"
+#INSANE_SKIP_${PN} = "file-rdeps"

@@ -1,11 +1,14 @@
 # Pulled from a mix of different images:
 
-include /home/mrafik/yocto/yocto-tegra/poky-dunfell/meta/recipes-sato/images/core-image-sato-dev.bb
+require /home/mrafik/yocto/yocto-tegra/poky-dunfell/meta/recipes-sato/images/core-image-sato-dev.bb
 #include recipes-core/images/rpi-basic-image.bb
 
 # This image is a little more full featured, and includes wifi
 # support, provided you have a raspberrypi3
-inherit core-image-sato-dev
+#inherit core-image-sato-dev
+
+inherit populate_sdk_qt5 
+
 SUMMARY = "The minimal image that can run Qt5 applications"
 LICENSE = "MIT"
 MY_TOOLS = " \
@@ -37,17 +40,15 @@ MY_FEATURES = " \
     linux-firmware-bcm43430 \
     bluez5 \
     i2c-tools \
-    python-smbus \
     bridge-utils \
     hostapd \
     dhcp-server \
     iptables \
     wpa-supplicant \
 "
-DISTRO_FEATURES_append += " bluez5 bluetooth wifi"
+#DISTRO_FEATURES_append += " bluez5 bluetooth wifi"
 IMAGE_INSTALL_append = " \
     ${MY_TOOLS} \
     ${MY_PKGS} \
-    ${MY_FEATURES} \
     basicquick \
 "
