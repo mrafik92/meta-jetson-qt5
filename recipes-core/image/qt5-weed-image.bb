@@ -1,6 +1,6 @@
 # Pulled from a mix of different images:
 
-require /home/mrafik/yocto/yocto-tegra/poky-dunfell/meta/recipes-sato/images/core-image-sato-dev.bb
+require /home/mrafik/yocto-tegra/poky-dunfell/meta/recipes-sato/images/core-image-sato-dev.bb
 #include recipes-core/images/rpi-basic-image.bb
 
 # This image is a little more full featured, and includes wifi
